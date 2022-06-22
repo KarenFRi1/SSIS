@@ -1,0 +1,281 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/18/2022 8:44:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JC4OB3E"
+  DTS:CreatorName="DESKTOP-JC4OB3E\Pc"
+  DTS:DTSID="{F21EDCB3-89B9-46A8-BEDB-FEA87A5C99E9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ConsumirWebService"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{83461E48-E6D0-4C4D-A008-4BF3C232FA46}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{E0413451-06E4-4D70-A164-08841E547220}"
+      DTS:ObjectName="HTTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="https://footballpool.dataaccess.eu/info.wso?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="https://footballpool.dataaccess.eu/info.wso?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"></DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"></DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager 1]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{2C7CA13F-55B8-4F76-BF4B-2E883B22CD0A}"
+      DTS:ObjectName="HTTP Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"></DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"></DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JugadoresConTarjetasAmarillasRojas.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2ED6748E-7BB1-4DF8-841F-1C1948E0A43A}"
+      DTS:ObjectName="JugadoresConTarjetasAmarillasRojas.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\JugadoresConTarjetasAmarillasRojas.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ListaPaisesMoneda.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{6BC5D8ED-D44D-4894-AC5B-69475F2BF8EF}"
+      DTS:ObjectName="ListaPaisesMoneda.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\ListaPaisesMoneda.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ListaPaisesPorContinente.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{80D6FA30-1D9C-428B-ADC2-2E807751B8A3}"
+      DTS:ObjectName="ListaPaisesPorContinente.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\ListaPaisesPorContinente.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D7F51582-5F16-4225-A1E9-39778D4DF87F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Moneda]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="codigoISOMoneda">
+      <DTS:VariableValue
+        DTS:DataType="8">EUR</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Moneda por pais"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{1CA19479-DBA3-4E34-91DE-9A94693FD412}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Moneda por pais"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{2C7CA13F-55B8-4F76-BF4B-2E883B22CD0A}"
+          WSTask:Service="CountryInfoService"
+          WSTask:WSDLFile="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Inputs\Consumir Web Service\Paises.wsdl"
+          WSTask:OverwriteWSDLFile="True"
+          WSTask:OutputLocation="ListaPaisesMoneda.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="CountriesUsingCurrency"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Returns a list of all countries that use the same currency code. Pass a ISO currency code</WSTask:Documentation>
+            <WSTask:ParamInfo
+              WSTask:Name="sISOCurrencyCode"
+              WSTask:Datatype="string"
+              WSTask:ParamType="Variable"
+              WSTask:SeqNumber="0">
+              <WSTask:VariableValue>User::codigoISOMoneda</WSTask:VariableValue>
+            </WSTask:ParamInfo>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Paises"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{34FB1A1E-F32C-4537-B7D6-543034866A31}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Paises"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{2C7CA13F-55B8-4F76-BF4B-2E883B22CD0A}"
+          WSTask:Service="CountryInfoService"
+          WSTask:WSDLFile="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Inputs\Consumir Web Service\Paises.wsdl"
+          WSTask:OverwriteWSDLFile="True"
+          WSTask:OutputLocation="ListaPaisesPorContinente.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="ListOfCountryNamesGroupedByContinent"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Returns a list of all stored counties grouped per continent</WSTask:Documentation>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Web Service Football"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{3B2F74CA-5945-4F6F-B529-AA2533099959}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Web Service Football"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{E0413451-06E4-4D70-A164-08841E547220}"
+          WSTask:Service="Info"
+          WSTask:WSDLFile="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Inputs\Consumir Web Service\Football.wsdl"
+          WSTask:OverwriteWSDLFile="True"
+          WSTask:OutputLocation="JugadoresConTarjetasAmarillasRojas.xml" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="AllPlayersWithCards"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Returns an array with the names of all players that have a yellow or a red card. The number of yellow and red cards is returned.</WSTask:Documentation>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E399BEB9-4A6D-4B53-A3ED-CF86EA939130}"
+      DTS:From="Package\Web Service Football"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Paises" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{60E1898E-BF51-495B-AFE4-CFFF309D8EC1}"
+      DTS:From="Package\Paises"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Moneda por pais" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Moneda por pais"
+          TopLeft="291,222" />
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Paises"
+          TopLeft="319,126" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Web Service Football"
+          TopLeft="282,37" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="374.25,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="373.25,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

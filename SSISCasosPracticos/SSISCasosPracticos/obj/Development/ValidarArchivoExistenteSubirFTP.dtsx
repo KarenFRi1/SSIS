@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/19/2022 8:29:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JC4OB3E"
+  DTS:CreatorName="DESKTOP-JC4OB3E\Pc"
+  DTS:DTSID="{E80E8DDD-79A9-4D7B-BC37-1B5134314387}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ValidarArchivoExistenteSubirFTP"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9430FA7D-AFB3-4A26-B84A-10CD2F338451}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{107FC05E-EECD-4FE8-AD87-6C7F3A577828}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="cons1">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2ED17842-3EEF-40A7-A283-8CF08676F5B4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="cons2">
+      <DTS:VariableValue
+        DTS:DataType="3">2</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\For Loop Container"
+      DTS:AssignExpression="@cons1 = 1"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="For Loop Container"
+      DTS:DTSID="{52D46943-0A61-470E-93D7-375D4A214D20}"
+      DTS:EvalExpression="@cons1 &lt;= @cons2"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@cons1 = 1"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="For Loop Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\For Loop Container\Execute Process Task"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{DCFFE36B-AC9C-48D5-BAE7-2BD8FED85040}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Process Task"
+          DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+              Arguments="-ExecutionPolicy Unrestricted -File &quot;D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Inputs\Validar Archivo Existente y enviar a FTP\Archivo+Existente+Ruta+Local\Archivo Existente Ruta Local.ps1&quot;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\For Loop Container\Execute Process Task"
+          TopLeft="24,81" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="249,292"
+          Size="249,335"
+          Id="Package\For Loop Container"
+          TopLeft="319,89" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

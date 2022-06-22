@@ -1,0 +1,143 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/18/2022 10:50:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JC4OB3E"
+  DTS:CreatorName="DESKTOP-JC4OB3E\Pc"
+  DTS:DTSID="{E44BC44D-B6FA-4EC2-A753-8D6E4969F794}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="BulkCopyProgram2"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{385D159A-35A7-4A9A-A0C9-8215F67B6BF0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FTP Connection Manager]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{BB90D248-E3DF-4113-92BB-FDE0BD505CF1}"
+      DTS:ObjectName="FTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="66.220.9.50:21">
+          <DTS:FtpConnection
+            DTS:ServerName="66.220.9.50"
+            DTS:ServerUserName="KarenFri">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"></DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Moneda.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A34F5581-BC15-45A0-9FF1-30CB0B6B2492}"
+      DTS:ObjectName="Moneda.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\BulkCopyProgram\Moneda.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute Process Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{7891BA9B-02B8-4011-B37D-49847D8FCA35}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Process Task"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\bcp.exe"
+          Arguments="AdventureWorksDW2016.dbo.DimCurrency out &quot;D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\BulkCopyProgram\Moneda.txt&quot; -c -U User01 -S DESKTOP-JC4OB3E -P 1234 -t ," />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{C0BB8DE4-0E3A-4C23-8753-FAD6B46CA9F8}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP Task"
+      DTS:TaskContact="FTP Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{BB90D248-E3DF-4113-92BB-FDE0BD505CF1}"
+          TaskLocalPath="Moneda.txt"
+          TaskRemotePath="/My Documents" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{90A91874-8FC9-4605-ABB0-42D3FB4586A5}"
+      DTS:From="Package\Execute Process Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FTP Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Execute Process Task"
+          TopLeft="241,125" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\FTP Task"
+          TopLeft="271,217" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="334.75,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

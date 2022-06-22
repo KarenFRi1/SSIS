@@ -1,0 +1,737 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/18/2022 6:33:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JC4OB3E"
+  DTS:CreatorName="DESKTOP-JC4OB3E\Pc"
+  DTS:DTSID="{7F5EA1F6-5B47-4E75-AFD0-822238943DC6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ReporteSPConParametro"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D4932CD5-45D0-4412-AFCB-53E42F991B8E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.NORTHWND]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53426AAA-DDB4-4865-A19D-BD8F6399E6F9}"
+      DTS:ObjectName="LocalHost.NORTHWND">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=NORTHWND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ReporteConParametro]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0739AC59-E5A8-44F8-B695-527371A959C6}"
+      DTS:ObjectName="ReporteConParametro">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\0. Capacitaciones\SSIS\Curso 3\Laboratorio 1\Archivos Laboratorio\Output\ReporteConParametro.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{AF461C0E-8120-4868-B0EE-472CFA755862}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompanyName"
+              DTS:DTSID="{EEB7DB28-810D-4C05-84C8-714D33C14011}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerID"
+              DTS:DTSID="{61993175-95F8-458E-BA37-8066EC2C6865}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{2689D84D-FA91-4972-9A0F-AFE92F449E71}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{01E2B416-3179-4C7D-B465-34B0C46A1751}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="año"
+              DTS:DTSID="{C8F7DA10-E864-423C-AE82-87BA2E514AE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mes"
+              DTS:DTSID="{4D89866E-AF96-49A7-A7EA-9F48F950C7F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{B5A9BA61-786B-4116-AD19-D76578B40C27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{D8FAEA48-FF35-494B-A474-2708F6406BD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{7AA35E6A-B392-44AF-AE48-1138EE14AAC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="parcial"
+              DTS:DTSID="{78E51100-068D-4711-BAA2-A23D75A7CE21}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F31A9790-E4D9-4F8A-B746-B77FFFA30FC7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FechaFin]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaFin">
+      <DTS:VariableValue
+        DTS:DataType="3">1997</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4737B4D5-22B9-42EC-8B53-AF67D17C3982}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FechaIni]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FechaIni">
+      <DTS:VariableValue
+        DTS:DataType="3">1996</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE5C953C-AC54-4149-9CD1-B4295D2FC6C7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;EXEC dbo.sp_ReporteEnvioClientes &quot; +  (DT_WSTR, 4)  @[User::FechaIni] + &quot;, &quot; + (DT_WSTR, 4)   @[User::FechaFin]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Reporte">
+      <DTS:VariableValue
+        DTS:DataType="8">EXEC dbo.sp_ReporteEnvioClientes 1996, 1997</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Reporte Con Parametro"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E00E3DB-1BE2-4370-A7DC-65B4CF394239}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Reporte Con Parametro"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Reporte Con Parametro\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Reporte Con Parametro\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ReporteConParametro]"
+                  connectionManagerRefId="Package.ConnectionManagers[ReporteConParametro]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="CompanyName"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CompanyName]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderDate]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[año]"
+                      cachedDataType="i4"
+                      cachedName="año"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[año]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[año]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[mes]"
+                      cachedDataType="i4"
+                      cachedName="mes"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[mes]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[Quantity]"
+                      cachedDataType="i2"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].Columns[parcial]"
+                      cachedDataType="cy"
+                      cachedName="parcial"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[parcial]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[parcial]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="40"
+                      name="CompanyName" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[año]"
+                      dataType="i4"
+                      name="año" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[mes]"
+                      dataType="i4"
+                      name="mes" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Quantity]"
+                      dataType="i2"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[parcial]"
+                      dataType="cy"
+                      name="parcial" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Reporte Con Parametro\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Reporte</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Reporte Con Parametro\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NORTHWND]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NORTHWND]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="15"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                      length="40"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                      name="CompanyName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      length="5"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[año]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[año]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[año]"
+                      name="año"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]"
+                      name="mes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="40"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[parcial]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[parcial]"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].Columns[parcial]"
+                      name="parcial"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="40"
+                      name="CompanyName" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[año]"
+                      dataType="i4"
+                      name="año" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                      dataType="i4"
+                      name="mes" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i2"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[parcial]"
+                      dataType="cy"
+                      name="parcial" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                      name="CompanyName" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[año]"
+                      dataType="i4"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[año]"
+                      name="año" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mes]"
+                      dataType="i4"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mes]"
+                      name="mes" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i2"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[parcial]"
+                      dataType="cy"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[parcial]"
+                      name="parcial" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Reporte Con Parametro.Paths[OLE DB Source Output]"
+              endId="Package\Reporte Con Parametro\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Reporte Con Parametro\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Reporte Con Parametro"
+          TopLeft="185,67" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Reporte Con Parametro">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Reporte Con Parametro\OLE DB Source"
+          TopLeft="296,71" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Reporte Con Parametro\Flat File Destination"
+          TopLeft="288,184" />
+        <EdgeLayout
+          Id="Package\Reporte Con Parametro.Paths[OLE DB Source Output]"
+          TopLeft="375.25,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Reporte Con Parametro\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

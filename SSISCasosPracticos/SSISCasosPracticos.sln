@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32407.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSISCasosPracticos", "SSISCasosPracticos\SSISCasosPracticos.dtproj", "{B2DB41EF-D1EC-40BD-8351-DFFE73BF0052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2DB41EF-D1EC-40BD-8351-DFFE73BF0052}.Development|Default.ActiveCfg = Development
+		{B2DB41EF-D1EC-40BD-8351-DFFE73BF0052}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D1DD402-5E7C-43EF-ADA9-577748CB9B65}
+	EndGlobalSection
+EndGlobal
